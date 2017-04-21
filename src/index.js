@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Banner from './App';
 import JobsList from './components/JobsList';
 import JobsTable from './components/JobsTable';
+import ResultsTable from './components/ResultsTable';
+
 import './index.css';
 
 ReactDOM.render(
@@ -11,11 +13,11 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <JobsList />,
+  <JobsTable />,
   document.getElementById('jobs-list')
 )
 
 ReactDOM.render(
-  <JobsTable />,
+  <ResultsTable />,
   document.getElementById('jobs-table')
 )
