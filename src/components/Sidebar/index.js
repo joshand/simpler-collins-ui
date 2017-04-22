@@ -21,10 +21,13 @@ var SideBar = React.createClass({
             </div>
             <ul className="nav">
               <li className="active">
-                <a href="/jobs"><i className="pe-7s-graph"></i><p>Jobs</p></a>
+                <a href="/#"><i className="pe-7s-graph"></i><p>Dashboard</p></a>
               </li>
               <li className="inactive">
                 <a href="/results"><i className="pe-7s-graph"></i><p>Results</p></a>
+              </li>
+              <li className="inactive">
+                <a href="/another.html"><i className="pe-7s-graph"></i><p>Another HTML</p></a>
               </li>
             </ul>
           </div>
