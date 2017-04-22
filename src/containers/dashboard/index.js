@@ -4,63 +4,46 @@ import React from 'react';
 import SideBar from '../../components/Sidebar';
 import NavBar from '../../components/Navbar';
 import JobsTable from '../../components/JobsTable';
+import ResultsTable from '../../components/ResultsTable';
 import './assets/css/animate.css';
 import './assets/css/bootstrap.css';
 import './assets/css/light-bootstrap-dashboard.css';
 
+
+// main page layout
 function WholeScreen(props) {
   return (
       <div className="wrapper">
         <SideBar />
         <div className="main-panel">
           <NavBar />
-          <JobsTable />
+          <MainPanel />
         </div>
       </div>
 
   );
 }
 
-//
-// function Dashboard() {
-//   return (
-//     <SplitPane left={<NavBar />} right={<SideBar />} />
-//   );
-// }
+
+function MainPanel(props) {
+  return (
+    <div className="container-fluid">
+      <h1>This is the main panel</h1>
+      <p>We can write straight HTML</p>
+
+      <h3><strong>Note:</strong>We can expose an arbitrary number of child components here</h3>
+      {props.children}
+
+      <h4>Like a Job Table</h4>
+      <JobsTable key='jobs'/>
+
+      <h4>Or a Results Table</h4>
+      <ResultsTable key='results'/>
+    </div>
+
+
+
+  );
+}
 
 export default WholeScreen
-// Export this for unit testing more easily
-// export class Dashboard extends Component {
-//
-//   layout() {( function SplitPane(props) {
-//     return (
-//       <div className="SplitPane">
-//         <div className="SplitPane-left">
-//           {props.left}
-//         </div>
-//         <div className="SplitPane-right">
-//           {props.right}
-//         </div>
-//       </div>
-//     );
-//   })
-// }
-//
-//   render() {
-//     return (
-//       <div className="layout-wrapper">
-//         <div className="container-fluid">
-//           <Sidebar />
-//         </div>
-//         dsjlsdlkfj
-//         <div className="container-fluid">
-//           <Navbar />
-//         </div>
-//       </div>
-//
-//       )
-//   }
-// }
-//
-//
-// export default Dashboard
