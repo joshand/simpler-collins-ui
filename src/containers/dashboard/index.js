@@ -17,7 +17,18 @@ function WholeScreen(props) {
         <SideBar />
         <div className="main-panel">
           <NavBar />
-          <MainPanel />
+          <MainPanel>
+
+                  <h4>here we instatiate children and send them parms</h4>
+                  <MainPanel target='jobs'/>
+
+                  <h4>but be careful for loops</h4>
+                  <MainPanel target='results'/>
+
+            <JobsTable />
+          </MainPanel>
+            />
+
         </div>
       </div>
 
@@ -26,20 +37,22 @@ function WholeScreen(props) {
 
 
 function MainPanel(props) {
+
   return (
     <div className="container-fluid">
-      <h1>This is the main panel</h1>
-      <p>We can write straight HTML</p>
+      <h1>Main Panel</h1>
+      <p>We can define HTML in the Parent Container</p>
 
-      <h3><strong>Note:</strong>We can expose an arbitrary number of child components here</h3>
-      {props.children}
+      <p>and get props:</p>
+      <p>{props.target}</p>
+      <h4>We can add children here:</h4>
+        <JobsTable key='jobs'/>
 
-      <h4>Like a Job Table</h4>
-      <JobsTable key='jobs'/>
+      <h3><strong>Note:</strong>We will also render all childobjects</h3>
+        {props.children}
 
-      <h4>Or a Results Table</h4>
-      <ResultsTable key='results'/>
-    </div>
+  </div>
+
 
 
 
